@@ -59,6 +59,7 @@ def logout_request(request):
     data = {"userName":""}
     return JsonResponse(data)
 
+
 # Create a `registration` view to handle sign up request
 @csrf_exempt
 def registration(request):
@@ -91,6 +92,7 @@ def registration(request):
     else :
         data = {"userName":username,"error":"Already Registered"}
         return JsonResponse(data)
+
 
 # # Update the `get_dealerships` view to render the index page with
 # a list of dealerships
@@ -132,6 +134,8 @@ def get_dealer_details(request, dealer_id):
         return JsonResponse({"status":200,"dealer":dealership})
     else:
         return JsonResponse({"status":400,"message":"Bad Request"})
+
+
 
 # Create a `add_review` view to submit a review
 # def add_review(request):
